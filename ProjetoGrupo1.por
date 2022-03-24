@@ -9,8 +9,10 @@ programa
 	real play5 = 5598.00, play4 = 2899.00, nintendos = 2354.00, nintendods = 2000.00, xbox = 2399.00
 	real iphone13 = 5849.10, iphone13pro =7199.00, iphone13promax = 7899.00, samsungs22 = 5849.17, samsungs22ultra = 8549.17
 	real placamae = 699.00, processador = 1499.00, ssd = 279.00, placadevideo = 2499.00, fonte = 399.00
+
 	inteiro entrar, departamento, console, celular, hardware, quan =0, equacao, comprar
 	real compras=0
+
 	
 	funcao inicio()
 	{
@@ -26,7 +28,13 @@ programa
 	{	
 			escreva("\n\t\t\t\t\t\tOlá, viajante! Que bom te ver outra vez!\n")
 			escreva("\n\t\t\t\t\t\tDeseja entrar?\n")
+
 			escreva("\n\t\t\t\t\t\tDigite [1] para SIM e [2] para NÃO")
+
+
+	
+
+
 			resposta()
 			leia(entrar)
 			logo2()
@@ -45,7 +53,9 @@ programa
 	funcao cadastro()
 	{	logico confere = falso, confere2 = falso
 	     cadeia senha
+
 	     const inteiro total = 6
+
 	     cadeia login[] = {"luisfilipe", "lorenna", "matheus", "jefferson", "luana", "geisa"}
 	     cadeia codigo[] = {"jeremias123", "totoro22", "hahaha2", "M7f5w9m7@", "222", "123566"}
 		inteiro tentar
@@ -70,6 +80,8 @@ programa
 				leia(tentar)
 				
 				se(tentar == 1)
+
+
 				cadastro()
 				se(tentar == 2){
 				escreva("\n\t\t\t\t\t\t\tTudo bem, até a próxima!\n\n\n")
@@ -86,6 +98,8 @@ programa
 				se(tentar == 2){
 				escreva("\n\t\t\t\t\t\t\tTudo bem, até a próxima!\n\n\n")
 				pare
+
+
 				}
 			 }
 			
@@ -104,11 +118,14 @@ programa
 	{
 	kaboom()
 	escreva("\n\n\t\t\t\tEntão vamos lá viajante! Em qual departamento gostaria de ir?\n\n\n")
+
 	escreva("\t\t\t\t\t\tCONSOLES [1]\t HARDWARE [2]\t CELULARES [3]\n\t\t\t\t\t\t  SAIR [4] \n")
+
 	resposta()
 	leia(departamento)
 	kaboom()
 	escolha(departamento)
+
 	{caso 1: dpconsole()
 	pare
 	
@@ -121,6 +138,7 @@ programa
 	caso 4:comeco()
 	pare
 	
+
 	caso contrario:
 	escreva("\n\t\t\t\t\t\t\tEscolha uma alternativa válida\n")
 	Util.aguarde(987)
@@ -130,16 +148,20 @@ programa
 	funcao dpconsole()
 	{
 		escreva("\n\t\t\t\t\t\t\t===== CONSOLES =====\n\n")
+
 		escreva("\t\t\t\t[1] - Playstation 5\t[2] - Playstation 4\t[3] - Nintendo Switch\n\t\t\t\t[4] - Nintendo 3DS\t[5] - XBOX Series S\t[6] - Voltar\n\n")
+
 		resposta()
 		leia(console)
 		kaboom()
 	
 		escolha(console)
+
 		{caso 1:escreva("\n\n\t\t\t\t\tPlaystation 5: R$", play5, ". Quantos gostaria de comprar? \n\n  Desfrute do carregamento extremamente ",
 		"rápido com o SSD de altíssima velocidade,\n uma imersão mais profunda com suporte a feedback tátil, gatilhos adaptáveis e áudio 3D, \n além ",
 		"de uma geração inédita de jogos incríveis para PlayStation.")
 		
+
 		resposta()
 		leia(quan)
 		equacao = (quan * play5)
@@ -147,6 +169,7 @@ programa
 		escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan, " quantidades. São R$", equacao)
 		escreva("\n\n\t\t\t\t\tGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
 		resposta()
+
 		leia(comprar)
 		pare
 		
@@ -157,12 +180,14 @@ programa
 		leia(quan)
 		equacao = (quan * play4)
 		kaboom()
+
 		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
 		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
 		resposta()
 		leia(comprar)
 		pare
 	
+
 		caso 3:escreva("\nNintendo Switch: R$", nintendos, "reais. Quantos gostaria de comprar? \n\n O Nintendo Switch lhe permite jogar os jogos que quiser, onde e ",
 		"como quiser. \n Inclui o console Nintendo Switch e a base do Nintendo Switch na cor preta, contrastando \n com os controles Joy-Con direito e esquerdo, um vermelho", 
 		"e o outro azul. \n Também inclui tudo o que você precisa para começar a jogar.")
@@ -170,30 +195,34 @@ programa
 		leia(quan)
 		equacao = (quan * nintendos)
 		kaboom()
+
 		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
 		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
 		resposta()
 		leia(comprar)
 		pare
 		
+
 		caso 4:escreva("\nNintendo 3DS: R$", nintendods, "reais. Quantos gostaria de comprar? \n\n Com seu console 2DS você terá entretenimento garantido todos os dias. Sua ",
 		"tecnologia foi criada \n para colocar novos desafios para jogadores novatos e especialistas.")
 		resposta()
 		leia(quan)
 		equacao = (quan * nintendods)
 		kaboom()
+
 		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
 		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
 		resposta()
 		leia(comprar)
 		pare
-		
+
 		caso 5:escreva("\nX BOX Series: R$", xbox, "reais. Quantos gostaria de comprar? \n\n O Xbox One S mantém a proposta do Xbox One original em ser um console multimídia.",
 		"Além de conseguir rodar jogos em alta definição, \n é capaz de reproduzir filmes com resolução 4K e HDR, além de ser compatível com serviços de streaming.")
 		resposta()
 		leia(quan)
 		equacao = (quan * xbox)
 		kaboom()
+
 		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
 		escreva("\nGostaria de ir para o carrinho? Digite [1] para SIM ou [2] para continuar comprando: ")
 		resposta()
@@ -208,6 +237,7 @@ programa
 	}
 	funcao dphardware()
 	{
+
 		escreva("\n\t\t\t\t\t\t\t===== HARDWARE =====\n\n")
 		escreva("\t\t\t\t[1] - Placa mãe\t[2] - Processador \t[3] - SSD\n\t\t\t\t[4] - Placa de video \t[5] - Fonte \t[6] - Voltar\n\n")
 		resposta()
@@ -373,6 +403,7 @@ programa
 		caso contrario:dpcelular()
 		pare}
 		
+
 	}
 	funcao carrinho()
 	{
@@ -380,6 +411,8 @@ programa
 	//nao feito ainda
 	
 	}
+
+
 	funcao logo()
 	    {
 	     //Foi feita uma função para só a logo   
@@ -906,7 +939,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+
  * @POSICAO-CURSOR = 1328; 
+
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
