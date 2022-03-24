@@ -9,7 +9,7 @@ programa
 	real play5 = 5598.00, play4 = 2899.00, nintendos = 2354.00, nintendods = 2000.00, xbox = 2399.00
 	real iphone13 = 5849.10, iphone13pro =7199.00, iphone13promax = 7899.00, samsungs22 = 5849.17, samsungs22ultra = 8549.17
 	real placamae = 699.00, processador = 1499.00, ssd = 279.00, placadevideo = 2499.00, fonte = 399.00
-	inteiro entrar
+	inteiro entrar, departamento, console, quan, equacao, carrinho
 
 	
 	funcao inicio()
@@ -22,24 +22,9 @@ programa
 		comeco()
 
 	}
-	funcao comeco(){	
-		escreva("\n\t\t\t\tOlá, viajante! Que bom te ver outra vez!")
-		escreva("\n\t\t\t\tDeseja entrar?")
-		escreva("\n\t\t\t\tDigite [1] para SIM e [2] para não")
-		resposta()
-		leia(entrar)
-		kaboom()
-		se (entrar == 1)
-		cadastro()
-
-		senao se (entrar == 2)
-		escreva("Tudo bem, até a próxima!")
-
-		enquanto (entrar != 1 e entrar != 2){
-		escreva("Escolha uma alternativa válida")	
-		comeco() }
+	
 			
-	}
+	
 	
 funcao logo()
     {
@@ -565,10 +550,9 @@ funcao cadastro()
       cadeia codigo[] = {"jeremias123", "totoro22", "hahaha2", "M7f5w9m7@", "222", "123566"}
 
       faca{
-      
-      escreva("\nDigite seu nome de usuário: ")
+      escreva("\n\t\t\t\tDigite seu nome de usuário: \n\t\t\t\t")
       leia(acesso)
-      escreva("Digite a sua senha: ")
+      escreva("\t\t\t\tDigite a sua senha: \n\t\t\t\t")
       leia(senha)
       limpa()
 
@@ -596,8 +580,91 @@ funcao cadastro()
 }
 funcao menu()
 {escreva(loginglobal)
-escreva("\nOi")
-       }
+escreva("\n\nEntão vamos lá viajante! Em qual departamento gostaria de ir?\n\n")
+escreva("CONSOLES [1]\t HARDWARE [2]\t CELULAR [3] \n")
+leia(departamento)
+limpa()
+logo2()
+escreva(loginglobal)
+escolha(departamento)
+{caso 1:escreva("\n===== CONSOLES =====\n\n")
+escreva("1 - Playstation 5 [1] \n2 - Playstation 4 [2]  \n3 - Nintendo Switch [3] \n4 - Nintendo 3DS [4] \n5 - XBOX Series S [5]\n\n")
+leia(console)}
+
+escolha(console)
+{caso 1:escreva("\nPlaystation 5: R$", play5, " reais. Quantos gostaria de comprar? ")
+	leia(quan)
+	equacao = (quan * play5)
+	escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
+	escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
+	leia(carrinho)
+
+caso 2:escreva("\nPlaystation 4: R$", play4, "reais. Quantos gostaria de comprar?")
+leia(quan)
+equacao = (quan * play4)
+escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
+escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
+leia(carrinho)
+pare
+
+caso 3:escreva("\nNintendo Switch: R$", nintendos, "reais. Quantos gostaria de comprar?")
+leia(quan)
+equacao = (quan * nintendos)
+escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
+escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
+leia(carrinho)
+pare
+
+caso 4:escreva("\nNintendo 3DS: R$", nintendods, "reais. Quantos gostaria de comprar?")
+leia(quan)
+equacao = (quan * nintendods)
+escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
+escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
+leia(carrinho)
+pare
+
+caso 5:escreva("\nX BOX Series: R$", xbox, "reais. Quantos gostaria de comprar?")
+leia(quan)
+equacao = (quan * xbox)
+escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
+escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
+leia(carrinho)
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+}
+funcao comeco()
+{	
+		escreva("\n\t\t\t\tOlá, viajante! Que bom te ver outra vez!")
+		escreva("\n\t\t\t\tDeseja entrar?")
+		escreva("\n\t\t\t\tDigite [1] para SIM e [2] para não")
+		resposta()
+		leia(entrar)
+		kaboom()
+		se (entrar == 1)
+		cadastro()
+
+		senao se (entrar == 2)
+		escreva("Tudo bem, até a próxima!")
+
+		enquanto (entrar != 1 e entrar != 2){
+		escreva("Escolha uma alternativa válida")	
+		comeco() }
+			
+	}
 }
 
 /* $$$ Portugol Studio $$$ 
@@ -605,8 +672,8 @@ escreva("\nOi")
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1042; 
- * @DOBRAMENTO-CODIGO = [43, 538, 547, 550, 559, 596];
+ * @POSICAO-CURSOR = 52646; 
+ * @DOBRAMENTO-CODIGO = [28, 523, 532, 535, 544, 648];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
