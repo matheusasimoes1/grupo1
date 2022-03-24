@@ -9,7 +9,9 @@ programa
 	real play5 = 5598.00, play4 = 2899.00, nintendos = 2354.00, nintendods = 2000.00, xbox = 2399.00
 	real iphone13 = 5849.10, iphone13pro =7199.00, iphone13promax = 7899.00, samsungs22 = 5849.17, samsungs22ultra = 8549.17
 	real placamae = 699.00, processador = 1499.00, ssd = 279.00, placadevideo = 2499.00, fonte = 399.00
-	inteiro entrar, departamento, console, quan, equacao, carrinho
+
+	inteiro entrar, departamento, console, quan =0, equacao, comprar
+	real compras=0
 
 	
 	funcao inicio()
@@ -26,7 +28,9 @@ programa
 	{	
 			escreva("\n\t\t\t\t\t\tOlá, viajante! Que bom te ver outra vez!\n")
 			escreva("\n\t\t\t\t\t\tDeseja entrar?\n")
-			escreva("\n\t\t\t\t\t\tDigite [1] para SIM e [2] para não")
+
+			escreva("\n\t\t\t\t\t\tDigite [1] para SIM e [2] para NÃO")
+
 			resposta()
 			leia(entrar)
 			logo2()
@@ -70,13 +74,24 @@ programa
 				leia(tentar)
 				
 				se(tentar == 1)
-					cadastro()
-				se(tentar == 2)
-					pare
-				senao
+
+				cadastro()
+				se(tentar == 2){
+				escreva("\n\t\t\t\t\t\t\tTudo bem, até a próxima!\n\n\n")
+				pare}
+				
+				enquanto(tentar != 1 e tentar != 2)
 				{
-					logo2()
-					escreva("\n\t\t\t\t\t\t\tEscolha uma alternativa válida\n")
+				logo2()
+				escreva("\t\t\t\t\t\t\tTentar novamente?\n\n \t\t\t\t\t\t[1] SIM\t\t\t\t[2]NÃO")
+				resposta()
+				leia(tentar)
+				}	
+				
+				se(tentar == 2){
+				escreva("\n\t\t\t\t\t\t\tTudo bem, até a próxima!\n\n\n")
+				pare
+
 				}
 			 }
 			
@@ -95,19 +110,36 @@ programa
 	{
 	kaboom()
 	escreva("\n\n\t\t\t\tEntão vamos lá viajante! Em qual departamento gostaria de ir?\n\n\n")
-	escreva("\t\t\t\t\t\tCONSOLES [1]\t HARDWARE [2]\t CELULAR [3] \n")
+
+	escreva("\t\t\t\t\t\tCONSOLES [1]\t HARDWARE [2]\t CELULAR [3]\n\t\t\t\t\t\t  SAIR [4] \n")
+
 	resposta()
 	leia(departamento)
 	kaboom()
 	escolha(departamento)
-	{caso 1:escreva("\n\t\t\t\t\t\t\t===== CONSOLES =====\n\n")
-	escreva("\t\t\t\t[1] - Playstation 5\t[2] - Playstation 4\t[3] - Nintendo Switch\n\t\t\t\t\t\t[4] - Nintendo 3DS\t[5] - XBOX Series S\n\n")
-	resposta()
-	leia(console)
-	kaboom()}
+
+	{caso 1: dpconsole()
+	pare
 	
-	escolha(console)
-	{caso 1:escreva("\n\n\t\t\t\t\tPlaystation 5: R$", play5, ". Quantos gostaria de comprar? ")
+	caso 4:comeco()
+	pare
+	caso contrario:
+	escreva("\n\t\t\t\t\t\t\tEscolha uma alternativa válida\n")
+	Util.aguarde(987)
+	menu()
+	pare}
+}
+	funcao dpconsole()
+	{
+		escreva("\n\t\t\t\t\t\t\t===== CONSOLES =====\n\n")
+		escreva("\t\t\t\t[1] - Playstation 5\t[2] - Playstation 4\t[3] -9 Nintendo Switch\n\t\t\t\t[4] - Nintendo 3DS\t[5] - XBOX Series S\t[6] - Voltar\n\n")
+		resposta()
+		leia(console)
+		kaboom()
+	
+		escolha(console)
+		{caso 1:escreva("\n\n\t\t\t\t\tPlaystation 5: R$", play5, ". Quantos gostaria de comprar? ")
+
 		resposta()
 		leia(quan)
 		equacao = (quan * play5)
@@ -115,63 +147,67 @@ programa
 		escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan, " quantidades. São R$", equacao)
 		escreva("\n\n\t\t\t\t\tGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
 		resposta()
-		leia(carrinho)
+
+		leia(comprar)
+		pare
+		
+		caso 2:escreva("\nPlaystation 4: R$", play4, "reais. Quantos gostaria de comprar?")
+		leia(quan)
+		equacao = (quan * play4)
+		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
+		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
+		resposta()
+		leia(comprar)
+		pare
 	
-	caso 2:escreva("\nPlaystation 4: R$", play4, "reais. Quantos gostaria de comprar?")
-	leia(quan)
-	equacao = (quan * play4)
-	escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-	escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-	resposta()
-	leia(carrinho)
-	pare
+		caso 3:escreva("\nNintendo Switch: R$", nintendos, "reais. Quantos gostaria de comprar?")
+		leia(quan)
+		equacao = (quan * nintendos)
+		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
+		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
+		resposta()
+		leia(comprar)
+		pare
+		
+		caso 4:escreva("\nNintendo 3DS: R$", nintendods, "reais. Quantos gostaria de comprar?")
+		leia(quan)
+		equacao = (quan * nintendods)
+		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
+		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
+		resposta()
+		leia(comprar)
+		pare
+		
+		caso 5:escreva("\nX BOX Series: R$", xbox, "reais. Quantos gostaria de comprar?")
+		leia(quan)
+		equacao = (quan * xbox)
+		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
+		escreva("\nGostaria de ir para o carrinho? Digite [1] para SIM ou [2] para continuar comprando: ")
+		resposta()
+		leia(comprar)
+		pare
+		
+		caso 6:menu()
+		pare
+
+		caso contrario:dpconsole()
+		pare}
+	}
+	funcao dphardware()
+	{
+		//nao feito ainda
+	}
+	funcao dpcelular()
+	{
+		//naofeito
+	}
+	funcao carrinho()
+	{
 	
-	caso 3:escreva("\nNintendo Switch: R$", nintendos, "reais. Quantos gostaria de comprar?")
-	leia(quan)
-	equacao = (quan * nintendos)
-	escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-	escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-	resposta()
-	leia(carrinho)
-	pare
-	
-	caso 4:escreva("\nNintendo 3DS: R$", nintendods, "reais. Quantos gostaria de comprar?")
-	leia(quan)
-	equacao = (quan * nintendods)
-	escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-	escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-	resposta()
-	leia(carrinho)
-	pare
-	
-	caso 5:escreva("\nX BOX Series: R$", xbox, "reais. Quantos gostaria de comprar?")
-	leia(quan)
-	equacao = (quan * xbox)
-	escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-	escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-	resposta()
-	leia(carrinho)
-	pare
-	
-	caso contrario:
-	escreva("\n\t\t\t\t\t\t\tEscolha uma alternativa válida\n")
-	
-	
-	
-	
-	
+	//nao feito ainda
 	
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	}
-	
+
 	funcao logo()
 	    {
 	     //Foi feita uma função para só a logo   
@@ -698,8 +734,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 684; 
- * @DOBRAMENTO-CODIGO = [24, 44, 93, 174, 669, 678, 682];
+
+ * @POSICAO-CURSOR = 54912; 
+
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
