@@ -408,7 +408,12 @@ programa
 	funcao carrinho()
 	{
 	
-	//nao feito ainda
+
+	//leia(carrinhos)
+	//escreva("Deseja finalizar comprar? Digite [1] para SIM ou [2] para continuar comprando:")
+	
+	
+
 	
 	}
 
@@ -940,7 +945,8 @@ programa
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
 
- * @POSICAO-CURSOR = 1328; 
+ * @POSICAO-CURSOR = 14031; 
+ * @DOBRAMENTO-CODIGO = [16, 26, 52, 116, 147, 237, 418, 913, 922, 926];
 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
