@@ -9,8 +9,10 @@ programa
 	real play5 = 5598.00, play4 = 2899.00, nintendos = 2354.00, nintendods = 2000.00, xbox = 2399.00
 	real iphone13 = 5849.10, iphone13pro =7199.00, iphone13promax = 7899.00, samsungs22 = 5849.17, samsungs22ultra = 8549.17
 	real placamae = 699.00, processador = 1499.00, ssd = 279.00, placadevideo = 2499.00, fonte = 399.00
+
 	inteiro entrar, departamento, console, quan =0, equacao, comprar
 	real compras=0
+
 	
 	funcao inicio()
 	{
@@ -26,7 +28,9 @@ programa
 	{	
 			escreva("\n\t\t\t\t\t\tOlá, viajante! Que bom te ver outra vez!\n")
 			escreva("\n\t\t\t\t\t\tDeseja entrar?\n")
+
 			escreva("\n\t\t\t\t\t\tDigite [1] para SIM e [2] para NÃO")
+
 			resposta()
 			leia(entrar)
 			logo2()
@@ -70,6 +74,7 @@ programa
 				leia(tentar)
 				
 				se(tentar == 1)
+
 				cadastro()
 				se(tentar == 2){
 				escreva("\n\t\t\t\t\t\t\tTudo bem, até a próxima!\n\n\n")
@@ -86,6 +91,7 @@ programa
 				se(tentar == 2){
 				escreva("\n\t\t\t\t\t\t\tTudo bem, até a próxima!\n\n\n")
 				pare
+
 				}
 			 }
 			
@@ -104,11 +110,14 @@ programa
 	{
 	kaboom()
 	escreva("\n\n\t\t\t\tEntão vamos lá viajante! Em qual departamento gostaria de ir?\n\n\n")
+
 	escreva("\t\t\t\t\t\tCONSOLES [1]\t HARDWARE [2]\t CELULAR [3]\n\t\t\t\t\t\t  SAIR [4] \n")
+
 	resposta()
 	leia(departamento)
 	kaboom()
 	escolha(departamento)
+
 	{caso 1: dpconsole()
 	pare
 	
@@ -130,6 +139,7 @@ programa
 	
 		escolha(console)
 		{caso 1:escreva("\n\n\t\t\t\t\tPlaystation 5: R$", play5, ". Quantos gostaria de comprar? ")
+
 		resposta()
 		leia(quan)
 		equacao = (quan * play5)
@@ -137,6 +147,7 @@ programa
 		escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan, " quantidades. São R$", equacao)
 		escreva("\n\n\t\t\t\t\tGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
 		resposta()
+
 		leia(comprar)
 		pare
 		
@@ -196,6 +207,7 @@ programa
 	//nao feito ainda
 	
 	}
+
 	funcao logo()
 	    {
 	     //Foi feita uma função para só a logo   
@@ -722,7 +734,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+
  * @POSICAO-CURSOR = 54912; 
+
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
