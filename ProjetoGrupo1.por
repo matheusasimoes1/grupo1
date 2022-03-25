@@ -7,7 +7,8 @@ programa
 	
 	//Variáveis globais
 	cadeia loginglobal = " "
-	real play5 = 5598.00, play4 = 2899.00, nintendos = 2354.00, nintendods = 2000.00, xbox = 2399.00
+
+	real play5 = 5598.00, play4 = 2899.00, nintendos = 2354.00, nintendo3ds = 2000.00, xboxs = 2399.00
 	real iphone13 = 5849.10, iphone13pro =7199.00, iphone13promax = 7899.00, samsungs22 = 5849.17, samsungs22ultra = 8549.17
 	real placamae = 699.00, processador = 1499.00, ssd = 279.00, placadevideo = 2499.00, fonte = 399.00
 
@@ -17,421 +18,12 @@ programa
 	real quantidade[]={0.}
 	real quan, equacao, arredondado
 	inteiro comprar
+
+	inteiro HAHA = 0
 	//funções primarias
 	funcao logo() //logo animada
 	    { 
 
-	inteiro entrar, departamento, console, celular, hardware, quan =0, equacao, comprar
-	real compras=0
-
-	
-	funcao inicio()
-	{
-		//logo()
-		logo2()
-		escreva("\t\t\t\t\t\tMas ao invés do caos, você encontra a luz!\n\n")
-		Util.aguarde(1000)
-		logo2()
-		comeco()
-	}
-	
-	funcao comeco()
-	{	
-			escreva("\n\t\t\t\t\t\tOlá, viajante! Que bom te ver outra vez!\n")
-			escreva("\n\t\t\t\t\t\tDeseja entrar?\n")
-
-			escreva("\n\t\t\t\t\t\tDigite [1] para SIM e [2] para NÃO")
-
-
-	
-
-
-			resposta()
-			leia(entrar)
-			logo2()
-			se (entrar == 1)
-			cadastro()
-	
-			senao se (entrar == 2)
-			escreva("\n\t\t\t\t\t\t\tTudo bem, até a próxima!\n\n\n")
-	
-	
-			enquanto (entrar != 1 e entrar != 2){
-			escreva("\n\t\t\t\t\t\t\tEscolha uma alternativa válida\n")	
-			comeco() }
-				
-		}
-	funcao cadastro()
-	{	logico confere = falso, confere2 = falso
-	     cadeia senha
-
-	     const inteiro total = 6
-
-	     cadeia login[] = {"luisfilipe", "lorenna", "matheus", "jefferson", "luana", "geisa"}
-	     cadeia codigo[] = {"jeremias123", "totoro22", "hahaha2", "M7f5w9m7@", "222", "123566"}
-		inteiro tentar
-		logo2()
-	      faca
-	      {
-			 escreva("\n\t\t\t\t\t\tLogin: ")
-			 leia(acesso)
-			 escreva("\n\t\t\t\t\t\tSenha: ")
-			 leia(senha)
-			 logo2()
-			
-			 para(inteiro i = 0 ; i < total ; i++)
-			 se(acesso == login[i]) 
-			 se(senha == codigo[i])
-			 confere = verdadeiro
-			
-			 se (nao confere)
-			 {	escreva("\t\t\t\t\t\t\tLogin ou senha inválidos\n\n")
-				escreva("\t\t\t\t\t\t\tTentar novamente?\n\n \t\t\t\t\t\t[1] SIM\t\t\t\t[2]NÃO")
-				resposta()
-				leia(tentar)
-				
-				se(tentar == 1)
-
-
-				cadastro()
-				se(tentar == 2){
-				escreva("\n\t\t\t\t\t\t\tTudo bem, até a próxima!\n\n\n")
-				pare}
-				
-				enquanto(tentar != 1 e tentar != 2)
-				{
-				logo2()
-				escreva("\t\t\t\t\t\t\tTentar novamente?\n\n \t\t\t\t\t\t[1] SIM\t\t\t\t[2]NÃO")
-				resposta()
-				leia(tentar)
-				}	
-				
-				se(tentar == 2){
-				escreva("\n\t\t\t\t\t\t\tTudo bem, até a próxima!\n\n\n")
-				pare
-
-
-				}
-			 }
-			
-		}
-			 enquanto (nao confere)
-			 se(confere)
-			 {
-			     loginglobal = acesso
-			     logo2()
-			     escreva("\n\n\t\t\t\t\tBem vindo ", loginglobal)
-			     Util.aguarde(3000)
-			     menu()
-			 }
-	}
-	funcao menu()
-	{
-	kaboom()
-	escreva("\n\n\t\t\t\tEntão vamos lá viajante! Em qual departamento gostaria de ir?\n\n\n")
-
-	escreva("\t\t\t\t\t\tCONSOLES [1]\t HARDWARE [2]\t CELULARES [3]\n\t\t\t\t\t\t  SAIR [4] \n")
-
-	resposta()
-	leia(departamento)
-	kaboom()
-	escolha(departamento)
-
-	{caso 1: dpconsole()
-	pare
-	
-	caso 2: dphardware()	
-	pare
-	
-	caso 3: dpcelular()
-	pare
-		
-	caso 4:comeco()
-	pare
-	
-
-	caso contrario:
-	escreva("\n\t\t\t\t\t\t\tEscolha uma alternativa válida\n")
-	Util.aguarde(987)
-	menu()
-	pare}
-}
-	funcao dpconsole()
-	{
-		escreva("\n\t\t\t\t\t\t\t===== CONSOLES =====\n\n")
-
-		escreva("\t\t\t\t[1] - Playstation 5\t[2] - Playstation 4\t[3] - Nintendo Switch\n\t\t\t\t[4] - Nintendo 3DS\t[5] - XBOX Series S\t[6] - Voltar\n\n")
-
-		resposta()
-		leia(console)
-		kaboom()
-	
-		escolha(console)
-
-		{caso 1:escreva("\n\n\t\t\t\t\tPlaystation 5: R$", play5, ". Quantos gostaria de comprar? \n\n  Desfrute do carregamento extremamente ",
-		"rápido com o SSD de altíssima velocidade,\n uma imersão mais profunda com suporte a feedback tátil, gatilhos adaptáveis e áudio 3D, \n além ",
-		"de uma geração inédita de jogos incríveis para PlayStation.")
-		
-
-		resposta()
-		leia(quan)
-		equacao = (quan * play5)
-		kaboom()
-		escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\n\n\t\t\t\t\tGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-
-		leia(comprar)
-		pare
-		
-		caso 2:escreva("\nPlaystation 4: R$", play4, "reais. Quantos gostaria de comprar? \n\n Você não só poderá baixar os melhores jogos, mas também ",
-		"navegar na web sem limites,\n graças à sua interconectividade global, também terá a possibilidade de competir \n online com seus amigos e com pessoas",
-		"de todo o mundo desfrutando de aventuras inesquecíveis.")
-		resposta()
-		leia(quan)
-		equacao = (quan * play4)
-		kaboom()
-
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-	
-
-		caso 3:escreva("\nNintendo Switch: R$", nintendos, "reais. Quantos gostaria de comprar? \n\n O Nintendo Switch lhe permite jogar os jogos que quiser, onde e ",
-		"como quiser. \n Inclui o console Nintendo Switch e a base do Nintendo Switch na cor preta, contrastando \n com os controles Joy-Con direito e esquerdo, um vermelho", 
-		"e o outro azul. \n Também inclui tudo o que você precisa para começar a jogar.")
-		resposta()
-		leia(quan)
-		equacao = (quan * nintendos)
-		kaboom()
-
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-		
-
-		caso 4:escreva("\nNintendo 3DS: R$", nintendods, "reais. Quantos gostaria de comprar? \n\n Com seu console 2DS você terá entretenimento garantido todos os dias. Sua ",
-		"tecnologia foi criada \n para colocar novos desafios para jogadores novatos e especialistas.")
-		resposta()
-		leia(quan)
-		equacao = (quan * nintendods)
-		kaboom()
-
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-
-		caso 5:escreva("\nX BOX Series: R$", xbox, "reais. Quantos gostaria de comprar? \n\n O Xbox One S mantém a proposta do Xbox One original em ser um console multimídia.",
-		"Além de conseguir rodar jogos em alta definição, \n é capaz de reproduzir filmes com resolução 4K e HDR, além de ser compatível com serviços de streaming.")
-		resposta()
-		leia(quan)
-		equacao = (quan * xbox)
-		kaboom()
-
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de ir para o carrinho? Digite [1] para SIM ou [2] para continuar comprando: ")
-		resposta()
-		leia(comprar)
-		pare
-		
-		caso 6:menu()
-		pare
-
-		caso contrario:dpconsole()
-		pare}
-	}
-	funcao dphardware()
-	{
-
-		escreva("\n\t\t\t\t\t\t\t===== HARDWARE =====\n\n")
-		escreva("\t\t\t\t[1] - Placa mãe\t[2] - Processador \t[3] - SSD\n\t\t\t\t[4] - Placa de video \t[5] - Fonte \t[6] - Voltar\n\n")
-		resposta()
-		leia(hardware)
-		kaboom()
-	
-		escolha(hardware)
-		{caso 1:escreva("\n\n\t\t\t\t\tPlaca mãe: R$",placamae , ". Quantos gostaria de comprar? \n\n  As séries GIGABYTE 400 maximizam o ",
-		"potencial do seu PC com a tecnologia AMD StoreMI. \nO StoreMI acelera os dispositivos de armazenamento tradicionais para reduzir os",
-		"tempos de inicialização \n e melhorar a experiência geral do usuário.")
-		
-		resposta()
-		leia(quan)
-		equacao = (quan * placamae)
-		kaboom()
-		escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\n\n\t\t\t\t\tGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-		
-		caso 2:escreva("\nProcessador : R$", processador, "reais. Quantos gostaria de comprar? \n\n Esteja você jogando os jogos mais recentes,", 
-		"projetando o próximo arranha-céu ou analisando dados científicos,\n a velocidade sem precedentes dos processadores AMD Ryzen série 5000 G ",
-		"para desktop é imparável.\n Com os processadores AMD Ryzen para desktop, você está sempre na frente.")
-
-		resposta()
-		leia(quan)
-		equacao = (quan * processador)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-	
-		caso 3:escreva("\nSSD: R$", ssd, "reais. Quantos gostaria de comprar? \n\n É útil para salvar programas e documentos com a sua capacidade  de 120 GB",
-		"possui o tamanho de 2.5 e interface de conexão SATA III, é compatível com Windonws, aumenta o desempenho do seu computador e é adequado para pc e notebook")
-		resposta()
-		leia(quan)
-		equacao = (quan * ssd)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-		
-		caso 4:escreva("\nPlaca de video: R$", placadevideo, "reais. Quantos gostaria de comprar? \n\n Amplie-se com a ZOTAC GAMING GeForce RTX 30 Series baseada na ",
-		"arquitetura NVIDIA Ampere. Construída com RT Cores e Tensor Cores aprimorados, novos multiprocessadores de streaming e memória GDDR6 de alta velocidade, a ZOTAC ",
-		"GAMING GeForce RTX 3050 Twin Edge dá origem a jogos amplificados.")
-
-		resposta()
-		leia(quan)
-		equacao = (quan * placadevideo)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-		
-		caso 5:escreva("\nFonte: R$", fonte, "reais. Quantos gostaria de comprar? \n\n A certificação 80 Plus Bronze garante uma eficiência de 85% a 50% de carga. A melhor",
-		"eficiência de energia leva a menos \n desperdício de energia, menos calor e menos ruído do ventilador. A vida útil do ventilador do rolamento hidráulico \n é superior a 4 anos.") 
-		resposta()
-		leia(quan)
-		equacao = (quan * fonte)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de ir para o carrinho? Digite [1] para SIM ou [2] para continuar comprando: ")
-		resposta()
-		leia(comprar)
-		pare
-
-		caso 6:menu()
-		pare
-
-		caso contrario:dphardware()
-		pare}
-		
-		
-	}
-	funcao dpcelular()
-	{
-		escreva("\n\t\t\t\t\t\t\t===== CELULARES =====\n\n")
-		escreva("\t\t\t\t[1] - Iphone 13\t[2] - Iphone 13 Pro \t[3] - Iphone 13 Pro Max\n\t\t\t\t[4] - Samsung Galaxy S22 5G \t[5] - Samsung Galaxy S22 Ultra 5G \t[6] - Voltar\n\n")
-		resposta()
-		leia(celular)
-		kaboom()
-	
-		escolha(celular)
-		{caso 1:escreva("\n\n\t\t\t\t\tIphone 13: R$",iphone13 , ". Quantos gostaria de comprar? \n\n  Nosso sistema de câmera dupla mais avançado até hoje, durabilidade na frente,",
-		"no meio e de ponta a ponta,\n um chip com velocidade impressionante. Tudo o que você faz fica mais rápido e um \n aumento notável na duração da bateria. iPhone 13, seu novo superpoder.")
-		
-		resposta()
-		leia(quan)
-		equacao = (quan * iphone13)
-		kaboom()
-		escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\n\n\t\t\t\t\tGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-		
-		caso 2:escreva("\nIphone 13 Pro  : R$", iphone13pro, "reais. Quantos gostaria de comprar? \n\n É todo Pro. Novo sistema de câmera dramaticamente mais poderoso.",
-		"Tela responsiva que surpreende a cada toque.\n O chip de smartphone mais rápido do mundo. Design com resistência fora de série. \nE um salto imenso na duração da bateria.",
-         " É Pro e pronto.")
-
-		resposta()
-		leia(quan)
-		equacao = (quan * iphone13pro)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-	
-		caso 3:escreva("\nIphone 13 Pro Max: R$", iphone13promax, "reais. Quantos gostaria de comprar? \n\n IPHONE 13 PRO MAX É todo Pro. Novo sistema de câmera dramaticamente mais ",
-		"poderoso. Tela responsiva que \n surpreende a cada toque. O chip de smartphone mais rápido do mundo. Design com resistência fora de série.\n e um salto imenso na duração da bateria ",
-		"com uma Super Retina XDR com ProMotion OLED sem bordas de 6,7 polegadas. É Pro e pronto. ")
-		resposta()
-		leia(quan)
-		equacao = (quan * iphone13promax)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-		
-		caso 4:escreva("\nSamsung Galaxy S22 5G : R$", samsungs22, "reais. Quantos gostaria de comprar? \n\n O Samsung Galaxy S22 5G é um ",
-		"produto com poucos concorrentes em termos de multimídia \n graças à câmera de 50 megapixels que permite ao Samsung Galaxy S22 5G tirar",
-		"fotos fantásticas com uma \n resolução de 8165x6124 pixels e gravar vídeos em 8K a espantosa resolução de 7680x4320 pixels. Muito fino, \n",
-		"7.6 milímetros, o que torna o Samsung Galaxy S22 5G realmente interessante.")
-
-		resposta()
-		leia(quan)
-		equacao = (quan * samsungs22)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-		
-		caso 5:escreva("\nSamsung Galaxy S22 Ultra 5G : R$", samsungs22ultra, "reais. Quantos gostaria de comprar? \n\n  O Samsung Galaxy S22 Ultra 5G ",
-		"é um produto com poucos concorrentes em termos de \n multimídia graças à câmera de 108 megapixels que permite ao Samsung Galaxy S22 Ultra 5G tirar ",
-		"fotos fantásticas \n com uma resolução de 12000x9000 pixels e gravar vídeos em 8K a espantosa resolução de 7680x4320 pixels. \n Muito fino, 8.9 milímetros,",
-		"o que torna o Samsung Galaxy S22 Ultra 5G realmente interessante.")
-		resposta()
-		leia(quan)
-		equacao = (quan * samsungs22ultra)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de ir para o carrinho? Digite [1] para SIM ou [2] para continuar comprando: ")
-		resposta()
-		leia(comprar)
-		pare
-
-		caso 6:menu()
-		pare
-
-		caso contrario:dpcelular()
-		pare}
-		
-
-	}
-	funcao carrinho()
-	{
-	
-
-	//leia(carrinhos)
-	//escreva("Deseja finalizar comprar? Digite [1] para SIM ou [2] para continuar comprando:")
-	
-	
-
-	
-	}
-
-
-	funcao logo()
-	    {
-	     //Foi feita uma função para só a logo   
 	    		escreva("\t\t_______________________________________________________________________________________________\n")
 			escreva("\t\t|                                                                                             |\n")
 			escreva("\t\t|                                                                                             |\n")
@@ -942,10 +534,12 @@ programa
 		escreva("\n\n\t\t\t\t-------------------------------------------------------------------------")
 		escreva("\n\n\t\t\t\t\t\t\tDigite uma opção: ")
 	} 
-	funcao resposta2() //console de resposta do usuario (qunatia)
+
+	funcao resposta2() //console de resposta do usuario (quantia)
 	{
 		escreva("\n\n\t\t\t\t-------------------------------------------------------------------------")
-		escreva("\n\n\t\t\t\t\t\t\tDigite uma quantia: ")
+		escreva("\n\n\t\t\t\t\t\t\tDigite a quantidade desejada: ")
+
 	}
 	funcao kaboomsair() //kaboom com opção sair
 	{
@@ -972,6 +566,7 @@ programa
 	{inteiro entrar
 			escreva("\n\t\t\t\t\t\tOlá, viajante! Que bom te ver outra vez!\n")
 			escreva("\n\t\t\t\t\t\tDeseja entrar?\n")
+
 
 			escreva("\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Não")
 
@@ -1006,6 +601,7 @@ programa
 		logo2()
 	      faca
 	      {
+			 escreva("\n\t\t\t\t\t\tDigite seu login e senha abaixo:\n ")
 			 escreva("\n\t\t\t\t\t\t\tLogin: ")
 			 leia(acesso)
 			 escreva("\n\t\t\t\t\t\t\tSenha: ")
@@ -1018,7 +614,7 @@ programa
 			 confere = verdadeiro
 			
 			 se (nao confere)
-			 {	escreva("\t\t\t\t\t\t\tLogin ou senha inválidos\n\n")
+			 {	escreva("\t\t\t\t\t\t\tLogin e/ou senha inválidos\n\n")
 				escreva("\t\t\t\t\t\t\tTentar novamente?\n\n \t\t\t\t\t\t[1] SIM\t\t\t\t[2]NÃO")
 				resposta()
 				leia(tentar)
@@ -1089,7 +685,7 @@ programa
 }
 	funcao dpconsole() //painel do departamento do console
 	{inteiro console
-	inteiro resp1
+	 inteiro resp1
 		kaboomvoltar()
 		escreva("\n\t\t\t\t\t\t\t===== CONSOLES =====\n\n")
 
@@ -1103,9 +699,9 @@ programa
 
 			{caso 1:escreva("\t\t\t\tDesfrute do carregamento extremamente ",
 			"rápido com o SSD de altíssima velocidade,\n\t\t\t\tuma imersão mais profunda com suporte a feedback tátil, gatilhos adaptáveis e áudio 3D,\n\t\t\t\talém ",
-			"de uma geração inédita de jogos incríveis para PlayStation.\n\n")
+			"de uma geração inédita de jogos incríveis para PlayStation 5.\n\n")
 			faca{
-				escreva("\t\t\t\t\t\t\tTemos ", estoque[0], " Playstation 5 em nosso estoque.\n\t\t\t\t\t\t\tPlaystation 5: R$ ", play5, ".\n\t\t\t\t\t\t\tQuantos gostaria de comprar? \n")
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[0], "  unidades do Playstation 5 em nosso estoque.\n\t\t\t\t\t\t\tPreço unitário do Playstation 5: R$ ", play5, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
 				resposta2()
 				leia(quan)
 				kaboom()	
@@ -1117,7 +713,54 @@ programa
 					equacao = (quan * play5)
 					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
 					//escreva("\t\t\t\t\t\tTemos ", estoque[0], " Playstation 5 em nosso estoque.\n")
-					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades. São R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades do Playstation 5. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "playstation"
+					quantidade[0] = quan
+				faca{
+					kaboom()
+					inteiro quant = tp.real_para_inteiro(quan)
+					escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+					escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+					escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+					resposta()
+					leia(resp1)}
+					enquanto (resp1 != 1 e resp1 != 2) 
+					se(resp1 == 1){
+					kaboom()
+					carrinho()}
+					se(resp1 == 2){
+					kaboom()
+					menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+			}
+				pare
+			
+			caso 2:escreva("\t\t\t\tVocê não só poderá baixar os melhores jogos, mas também ",
+			"navegar na web sem limites,\n\t\t\t\tgraças à sua interconectividade global, também terá a possibilidade de competir \n\t\t\t\tonline com seus amigos e com pessoas",
+			"de todo o mundo desfrutando de aventuras inesquecíveis.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[1], "  unidades do Playstation 4 em nosso estoque.\n\t\t\t\t\t\t\tPreço unitário do Playstation 4: R$ ", play4, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[1])
+				
+				faca{
+					kaboom()
+					equacao = (quan * play4)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					//escreva("\t\t\t\t\t\tTemos ", estoque[0], " Playstation 5 em nosso estoque.\n")
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades do Playstation 4. No total de R$ ", equacao)
 					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
 					resposta()
 					leia(comprar)}
@@ -1149,60 +792,156 @@ programa
 					menu()
 				}
 				pare
-			
-			caso 2:escreva("\nPlaystation 4: R$", play4, "reais. Quantos gostaria de comprar? \n\n Você não só poderá baixar os melhores jogos, mas também ",
-			"navegar na web sem limites,\n graças à sua interconectividade global, também terá a possibilidade de competir \n online com seus amigos e com pessoas",
-			"de todo o mundo desfrutando de aventuras inesquecíveis.")
-			resposta()
-			leia(quan)
-			equacao = (quan * play4)
-			kaboom()
-			escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-			escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-			resposta()
-			leia(comprar)
-			pare
 		
 	
-			caso 3:escreva("\nNintendo Switch: R$", nintendos, "reais. Quantos gostaria de comprar? \n\n O Nintendo Switch lhe permite jogar os jogos que quiser, onde e ",
-			"como quiser. \n Inclui o console Nintendo Switch e a base do Nintendo Switch na cor preta, contrastando \n com os controles Joy-Con direito e esquerdo, um vermelho", 
-			"e o outro azul. \n Também inclui tudo o que você precisa para começar a jogar.")
-			resposta()
-			leia(quan)
-			equacao = (quan * nintendos)
-			kaboom()
-	
-			escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-			escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-			resposta()
-			leia(comprar)
-			pare
+			caso 3:escreva("\t\t\t\tO Nintendo Switch lhe permite jogar os jogos que quiser, onde e ",
+			"como quiser. \n\t\t\t\tInclui o console Nintendo Switch e a base do Nintendo Switch na cor preta, contrastando \n\t\t\t\tcom os controles Joy-Con direito e esquerdo, um vermelho", 
+			"e o outro azul. \n\t\t\t\tTambém inclui tudo o que você precisa para começar a jogar.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[2], "  unidades do Nitendo Switch em nosso estoque.\n\t\t\t\t\t\t\tPreço unitário do Nintendo Switch: R$ ", nintendos, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[2])
+				
+				faca{
+					kaboom()
+					equacao = (quan * nintendos)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					//escreva("\t\t\t\t\t\tTemos ", estoque[0], " Playstation 5 em nosso estoque.\n")
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades do Nintendo Switch. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Nintendo Switch"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp1)}
+						enquanto (resp1 != 1 e resp1 != 2) 
+							se(resp1 == 1){
+								kaboom()
+								carrinho()}
+							se(resp1 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
+				pare
 			
-	
-			caso 4:escreva("\nNintendo 3DS: R$", nintendods, "reais. Quantos gostaria de comprar? \n\n Com seu console 2DS você terá entretenimento garantido todos os dias. Sua ",
-			"tecnologia foi criada \n para colocar novos desafios para jogadores novatos e especialistas.")
-			resposta()
-			leia(quan)
-			equacao = (quan * nintendods)
-			kaboom()
-	
-			escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-			escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-			resposta()
-			leia(comprar)
+			caso 4:escreva("\t\t\t\tCom seu console 3DS você terá entretenimento garantido todos os dias. \n\t\t\t\tSua ",
+			"tecnologia foi criada \n\t\t\t\tpara colocar novos desafios para jogadores novatos e especialistas.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[3], "  unidades do Nitendo3DS em nosso estoque.\n\t\t\t\t\t\t\tPreço unitário do Nintendo3DS: R$ ", nintendo3ds, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[3])
+				
+				faca{
+					kaboom()
+					equacao = (quan * nintendo3ds)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					//escreva("\t\t\t\t\t\tTemos ", estoque[0], " Playstation 5 em nosso estoque.\n")
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades do Nintendo3ds. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Nintendo3DS"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp1)}
+						enquanto (resp1 != 1 e resp1 != 2) 
+							se(resp1 == 1){
+								kaboom()
+								carrinho()}
+							se(resp1 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 			pare
 	
-			caso 5:escreva("\nX BOX Series: R$", xbox, "reais. Quantos gostaria de comprar? \n\n O Xbox One S mantém a proposta do Xbox One original em ser um console multimídia.",
-			"Além de conseguir rodar jogos em alta definição, \n é capaz de reproduzir filmes com resolução 4K e HDR, além de ser compatível com serviços de streaming.")
-			resposta()
-			leia(quan)
-			equacao = (quan * xbox)
-			kaboom()
-	
-			escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-			escreva("\nGostaria de ir para o carrinho? Digite [1] para SIM ou [2] para continuar comprando: ")
-			resposta()
-			leia(comprar)
+			caso 5:escreva ("\t\t\t\tXbox Series S, o menor e mais elegante de todos os tempos.",
+			"\n\t\t\t\tCom taxas de quadros mais altas, tempos de carregamento mais rápidos e mundos mais ricos e dinâmicos,",
+			"\n\t\t\t\to Xbox Series S oferece desempenho e velocidade de última geração em um formato compacto", 
+			"\n\t\t\t\te totalmente digital.", 
+			"\n\t\t\t\tRetrocompatibilidade com milhares de jogos. Prepare-se para tempos de carregamento mais rápidos,", 
+			"\n\t\t\t\tresolução mais alta, taxas de quadros mais estáveis e melhor latência de entrada em milhares de jogos", 
+			"\n\t\t\t\tXbox One, Xbox 360 e Xbox Original..\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[4], "  unidades do Nitendo3DS em nosso estoque.\n\t\t\t\t\t\t\tPreço unitário XBOX Series S: R$ ", xboxs, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[4])
+				
+				faca{
+					kaboom()
+					equacao = (quan * xboxs)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					//escreva("\t\t\t\t\t\tTemos ", estoque[0], " Playstation 5 em nosso estoque.\n")
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades do Xbox Series S. No total de  R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Xbox Series S"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp1)}
+						enquanto (resp1 != 1 e resp1 != 2) 
+							se(resp1 == 1){
+								kaboom()
+								carrinho()}
+							se(resp1 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 			pare
 			
 			caso 9:menu()
@@ -1215,6 +954,7 @@ programa
 	}
 	funcao dphardware() //painel do departamento de hardware
 	{ inteiro hardware
+	  inteiro resp2
 
 		escreva("\n\t\t\t\t\t\t\t===== HARDWARE =====\n\n")
 		escreva("\t\t\t\t[1] - Placa mãe\t[2] - Processador \t[3] - SSD\n\t\t\t\t[4] - Placa de video \t[5] - Fonte")
@@ -1223,70 +963,246 @@ programa
 		kaboomvoltar()
 	
 		escolha(hardware)
-		{caso 1:escreva("\n\n\t\t\t\t\tPlaca mãe: R$",placamae , ". Quantos gostaria de comprar? \n\n  As séries GIGABYTE 400 maximizam o ",
-		"potencial do seu PC com a tecnologia AMD StoreMI. \nO StoreMI acelera os dispositivos de armazenamento tradicionais para reduzir os",
-		"tempos de inicialização \n e melhorar a experiência geral do usuário.")
-		
-		resposta()
-		leia(quan)
-		equacao = (quan * placamae)
-		kaboom()
-		escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\n\n\t\t\t\t\tGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
+		{caso 1:escreva("\t\t\t\tAs séries GIGABYTE 400 maximizam o potencial do seu PC com a tecnologia AMD StoreMI.",
+		"\n\t\t\t\tO StoreMI acelera os dispositivos de armazenamento tradicionais para reduzir os",
+		"\n\t\t\t\ttempos de inicialização e melhorar a experiência geral do usuário\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[5], "  unidades da Placa Mãe em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário da Placa Mãe: R$ ", placamae, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[5])
+				
+				faca{
+					kaboom()
+					equacao = (quan * placamae)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da Placa Mãe. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Placa Mãe"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp2)}
+						enquanto (resp2 != 1 e resp2 != 2) 
+							se(resp2 == 1){
+								kaboom()
+								carrinho()}
+							se(resp2 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 		pare
 		
-		caso 2:escreva("\nProcessador : R$", processador, "reais. Quantos gostaria de comprar? \n\n Esteja você jogando os jogos mais recentes,", 
-		"projetando o próximo arranha-céu ou analisando dados científicos,\n a velocidade sem precedentes dos processadores AMD Ryzen série 5000 G ",
-		"para desktop é imparável.\n Com os processadores AMD Ryzen para desktop, você está sempre na frente.")
-
-		resposta()
-		leia(quan)
-		equacao = (quan * processador)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
+		caso 2:escreva("\t\t\t\tEsteja você jogando os jogos mais recentes,", 
+		"\n\t\t\t\tprojetando o próximo arranha-céu ou analisando dados científicos,",
+		"\n\t\t\t\ta velocidade sem precedentes dos processadores AMD Ryzen série 5000 G ",
+		"\n\t\t\t\tpara desktop é imparável.Com os processadores AMD Ryzen para desktop, você está sempre na frente.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[6], "  unidades do Processador AMD em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário do Processador AMD: R$ ", processador, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[6])
+				
+				faca{
+					kaboom()
+					equacao = (quan * processador)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da Processador AMD. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Processdor AMD"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp2)}
+						enquanto (resp2 != 1 e resp2 != 2) 
+							se(resp2 == 1){
+								kaboom()
+								carrinho()}
+							se(resp2 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 		pare
 	
-		caso 3:escreva("\nSSD: R$", ssd, "reais. Quantos gostaria de comprar? \n\n É útil para salvar programas e documentos com a sua capacidade  de 120 GB",
-		"possui o tamanho de 2.5 e interface de conexão SATA III, é compatível com Windonws, aumenta o desempenho do seu computador e é adequado para pc e notebook")
-		resposta()
-		leia(quan)
-		equacao = (quan * ssd)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
+		caso 3:escreva("\t\t\t\tÉ útil para salvar programas e documentos com a sua capacidade  de 120 GB",
+		"\n\t\t\t\tpossui o tamanho de 2.5 e interface de conexão SATA III, é compatível com Windonws,", 
+		"\n\t\t\t\taumenta o desempenho do seu computador e é adequado para pc e notebook\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[7], "  unidades do SSD em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário do SSD: R$ ", ssd, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[7])
+				
+				faca{
+					kaboom()
+					equacao = (quan * ssd)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades do SSD. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "SSD"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp2)}
+						enquanto (resp2 != 1 e resp2 != 2) 
+							se(resp2 == 1){
+								kaboom()
+								carrinho()}
+							se(resp2 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 		pare
 		
-		caso 4:escreva("\nPlaca de video: R$", placadevideo, "reais. Quantos gostaria de comprar? \n\n Amplie-se com a ZOTAC GAMING GeForce RTX 30 Series baseada na ",
-		"arquitetura NVIDIA Ampere. Construída com RT Cores e Tensor Cores aprimorados, novos multiprocessadores de streaming e memória GDDR6 de alta velocidade, a ZOTAC ",
-		"GAMING GeForce RTX 3050 Twin Edge dá origem a jogos amplificados.")
-
-		resposta()
-		leia(quan)
-		equacao = (quan * placadevideo)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
+		caso 4:escreva("\t\t\t\tAmplie-se com a ZOTAC GAMING GeForce RTX 30 Series baseada na ",
+		"\n\t\t\t\tarquitetura NVIDIA Ampere. Construída com RT Cores e Tensor Cores aprimorados", 
+		"\n\t\t\t\tnovos multiprocessadores de streaming e memória GDDR6 de alta velocidade, a ZOTAC ",
+		"\n\t\t\t\tGAMING GeForce RTX 3050 Twin Edge dá origem a jogos amplificados.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[8], "  unidades da RTX 3050 em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário da RTX 3050: R$ ", placadevideo, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[8])
+				
+				faca{
+					kaboom()
+					equacao = (quan * placadevideo)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da RTX 3050. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "RTX 3050"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp2)}
+						enquanto (resp2 != 1 e resp2 != 2) 
+							se(resp2 == 1){
+								kaboom()
+								carrinho()}
+							se(resp2 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 		pare
 		
-		caso 5:escreva("\nFonte: R$", fonte, "reais. Quantos gostaria de comprar? \n\n A certificação 80 Plus Bronze garante uma eficiência de 85% a 50% de carga. A melhor",
-		"eficiência de energia leva a menos \n desperdício de energia, menos calor e menos ruído do ventilador. A vida útil do ventilador do rolamento hidráulico \n é superior a 4 anos.") 
-		resposta()
-		leia(quan)
-		equacao = (quan * fonte)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de ir para o carrinho? Digite [1] para SIM ou [2] para continuar comprando: ")
-		resposta()
-		leia(comprar)
+		caso 5:escreva("\t\t\t\tA certificação 80 Plus Bronze garante uma eficiência de 85% a 50% de carga. A melhor",
+		"\n\t\t\t\teficiência de energia leva a menos desperdício de energia, menos calor e menos ruído do ventilador.", 
+		"\n\t\t\t\tA vida útil do ventilador do rolamento hidráulico é superior a 4 anos.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[9], "  unidades da Fonte em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário da Fonte: R$ ", fonte, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[9])
+				
+				faca{
+					kaboom()
+					equacao = (quan * fonte)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da Fonte. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Fonte"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp2)}
+						enquanto (resp2 != 1 e resp2 != 2) 
+							se(resp2 == 1){
+								kaboom()
+								carrinho()}
+							se(resp2 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 		pare
 
 		caso 6:menu()
@@ -1299,6 +1215,7 @@ programa
 	}
 	funcao dpcelular() //painel do departamento de celulares
 	{inteiro celular
+	 inteiro resp3
 		escreva("\n\t\t\t\t\t\t\t===== CELULARES =====\n\n")
 		escreva("\t\t\t\t[1] - Iphone 13\t[2] - Iphone 13 Pro \t[3] - Iphone 13 Pro Max\n\t\t\t\t[4] - Samsung Galaxy S22 5G \t[5] - Samsung Galaxy S22 Ultra 5G \t[6] - Voltar\n\n")
 		resposta()
@@ -1306,73 +1223,261 @@ programa
 		kaboom()
 	
 		escolha(celular)
-		{caso 1:escreva("\n\n\t\t\t\t\tIphone 13: R$",iphone13 , ". Quantos gostaria de comprar? \n\n  Nosso sistema de câmera dupla mais avançado até hoje, durabilidade na frente,",
-		"no meio e de ponta a ponta,\n um chip com velocidade impressionante. Tudo o que você faz fica mais rápido e um \n aumento notável na duração da bateria. iPhone 13, seu novo superpoder.")
-		
-		resposta()
-		leia(quan)
-		equacao = (quan * iphone13)
-		kaboom()
-		escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\n\n\t\t\t\t\tGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
+		{caso 1:escreva("\t\t\t\tNosso sistema de câmera dupla mais avançado até hoje, durabilidade na frente,",
+		"\n\t\t\t\tno meio e de ponta a ponta, um chip com velocidade impressionante. Tudo o que você faz fica mais rápido", 
+		"\n\t\t\t\te um aumento notável na duração da bateria. iPhone 13, seu novo superpoder\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[10], "  unidades da Iphone 13 em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário da Iphone 13: R$ ", iphone13, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+
+			enquanto (quan > estoque[10])
+				
+				faca{
+					kaboom()
+					equacao = (quan * iphone13)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da Iphone 13. No total de R$ ", equacao)
+
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+
+					produtos[0] = "Iphone 13"
+
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+
+						leia(resp3)}
+						enquanto (resp3 != 1 e resp3 != 2) 
+							se(resp3 == 1){
+								kaboom()
+								carrinho()}
+							se(resp3 == 2){
+
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
+
 		pare
 		
-		caso 2:escreva("\nIphone 13 Pro  : R$", iphone13pro, "reais. Quantos gostaria de comprar? \n\n É todo Pro. Novo sistema de câmera dramaticamente mais poderoso.",
-		"Tela responsiva que surpreende a cada toque.\n O chip de smartphone mais rápido do mundo. Design com resistência fora de série. \nE um salto imenso na duração da bateria.",
-         " É Pro e pronto.")
-
-		resposta()
-		leia(quan)
-		equacao = (quan * iphone13pro)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
+		caso 2:escreva("\t\t\t\tÉ todo Pro. Novo sistema de câmera dramaticamente mais poderoso.",
+		"\n\t\t\t\tTela responsiva que surpreende a cada toque.O chip de smartphone mais rápido do mundo. Design com resistência fora de série.",
+		"\n\t\t\t\tE um salto imenso na duração da bateria.",
+          "\n\t\t\t\tÉ Pro e pronto.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[11], "  unidades da Iphone 13 Pro em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário da Iphone 13 Pro: R$ ", iphone13pro, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[11])
+				
+				faca{
+					kaboom()
+					equacao = (quan * iphone13pro)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da Iphone 13 Pro. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Iphone 13 Pro"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp3)}
+						enquanto (resp3 != 1 e resp3 != 2) 
+							se(resp3 == 1){
+								kaboom()
+								carrinho()}
+							se(resp3 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 		pare
 	
-		caso 3:escreva("\nIphone 13 Pro Max: R$", iphone13promax, "reais. Quantos gostaria de comprar? \n\n IPHONE 13 PRO MAX É todo Pro. Novo sistema de câmera dramaticamente mais ",
-		"poderoso. Tela responsiva que \n surpreende a cada toque. O chip de smartphone mais rápido do mundo. Design com resistência fora de série.\n e um salto imenso na duração da bateria ",
-		"com uma Super Retina XDR com ProMotion OLED sem bordas de 6,7 polegadas. É Pro e pronto. ")
-		resposta()
-		leia(quan)
-		equacao = (quan * iphone13promax)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
+		caso 3:escreva("\t\t\t\tIPHONE 13 PRO MAX É todo Pro. Novo sistema de câmera dramaticamente mais ",
+		"\n\t\t\t\tpoderoso. Tela responsiva que surpreende a cada toque. O chip de smartphone mais rápido do mundo.",
+		"\n\t\t\t\tDesign com resistência fora de série.e um salto imenso na duração da bateria ",
+		"\n\t\t\t\tcom uma Super Retina XDR com ProMotion OLED sem bordas de 6,7 polegadas. É Pro e pronto.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[12], "  unidades da Iphone 13 Pro Max em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário da Iphone 13 Pro Max: R$ ", iphone13promax, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[12])
+				
+				faca{
+					kaboom()
+					equacao = (quan * iphone13promax)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da Iphone 13 Pro Max. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Iphone 13 Pro Max"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp3)}
+						enquanto (resp3 != 1 e resp3 != 2) 
+							se(resp3 == 1){
+								kaboom()
+								carrinho()}
+							se(resp3 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 		pare
 		
-		caso 4:escreva("\nSamsung Galaxy S22 5G : R$", samsungs22, "reais. Quantos gostaria de comprar? \n\n O Samsung Galaxy S22 5G é um ",
-		"produto com poucos concorrentes em termos de multimídia \n graças à câmera de 50 megapixels que permite ao Samsung Galaxy S22 5G tirar",
-		"fotos fantásticas com uma \n resolução de 8165x6124 pixels e gravar vídeos em 8K a espantosa resolução de 7680x4320 pixels. Muito fino, \n",
-		"7.6 milímetros, o que torna o Samsung Galaxy S22 5G realmente interessante.")
+		caso 4:escreva("\t\t\t\tO Samsung Galaxy S22 5G é um ",
+		"\n\t\t\t\tproduto com poucos concorrentes em termos de multimídia", 
+		"\n\t\t\t\tgraças à câmera de 50 megapixels que permite ao Samsung Galaxy S22 5G tirar",
+		"\n\t\t\t\tfotos fantásticas com uma resolução de 8165x6124 pixels e gravar vídeos em 8K", 
+		"\n\t\t\t\ta espantosa resolução de 7680x4320 pixels. Muito fino,",
+		"\n\t\t\t\t7.6 milímetros, o que torna o Samsung Galaxy S22 5G realmente interessante.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[13], "  unidades da Samsung S22 em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário da Samsung S22: R$ ", samsungs22, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[13])
+				
+				faca{
+					kaboom()
+					equacao = (quan * samsungs22)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da Samsung S22. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Samsung S22"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp3)}
+						enquanto (resp3 != 1 e resp3 != 2) 
+							se(resp3 == 1){
+								kaboom()
+								carrinho()}
+							se(resp3 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
+		pare
+		
+		caso 5:escreva("\t\t\t\tO Samsung Galaxy S22 Ultra 5G ",
+		"\n\t\t\t\té um produto com poucos concorrentes em termos de multimídia graças à câmera de 108 megapixels que permite",
+		"\n\t\t\t\tao Samsung Galaxy S22 Ultra 5G tirar ",
+		"\n\t\t\t\tfotos fantásticas com uma resolução de 12000x9000 pixels e gravar vídeos em 8K a espantosa resolução de 7680x4320 pixels.",
+		"\n\t\t\t\tMuito fino, 8.9 milímetros,",
+		"\n\t\t\t\to que torna o Samsung Galaxy S22 Ultra 5G realmente interessante.\n\n")
+			faca{
+				escreva("\t\t\t\t\t\t\tTemos ", estoque[14], "  unidades da Samsung S22 Ultra em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário da Samsung S22 Ultra: R$ ", samsungs22ultra, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+				resposta2()
+				leia(quan)
+				kaboom()	
+				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+			enquanto (quan > estoque[14])
+				
+				faca{
+					kaboom()
+					equacao = (quan * samsungs22ultra)
+					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da Samsung S22 Ultra. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
+					resposta()
+					leia(comprar)}
+				enquanto(comprar!=1 e comprar != 2)
+				se(comprar == 1){
+					compras[0] = equacao 
+					produtos[0] = "Samsung S22 Ultra"
+					quantidade[0] = quan
+					
+						faca
+						{
+						kaboom()
+						inteiro quant = tp.real_para_inteiro(quan)
+						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
+						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+						resposta()
+						leia(resp3)}
+						enquanto (resp3 != 1 e resp3 != 2) 
+							se(resp3 == 1){
+								kaboom()
+								carrinho()}
+							se(resp3 == 2){
+								kaboom()
+								menu()}
+						}
+				senao se(comprar == 2){
+					kaboom()
+					menu()
+				}
 
-		resposta()
-		leia(quan)
-		equacao = (quan * samsungs22)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de por no carrinho? Digite [1] para SIM ou [2] para NÃO: ")
-		resposta()
-		leia(comprar)
-		pare
-		
-		caso 5:escreva("\nSamsung Galaxy S22 Ultra 5G : R$", samsungs22ultra, "reais. Quantos gostaria de comprar? \n\n  O Samsung Galaxy S22 Ultra 5G ",
-		"é um produto com poucos concorrentes em termos de \n multimídia graças à câmera de 108 megapixels que permite ao Samsung Galaxy S22 Ultra 5G tirar ",
-		"fotos fantásticas \n com uma resolução de 12000x9000 pixels e gravar vídeos em 8K a espantosa resolução de 7680x4320 pixels. \n Muito fino, 8.9 milímetros,",
-		"o que torna o Samsung Galaxy S22 Ultra 5G realmente interessante.")
-		resposta()
-		leia(quan)
-		equacao = (quan * samsungs22ultra)
-		kaboom()
-		escreva("\nVocê escolheu ", quan, " quantidades. São R$", equacao)
-		escreva("\nGostaria de ir para o carrinho? Digite [1] para SIM ou [2] para continuar comprando: ")
-		resposta()
-		leia(comprar)
 		pare
 
 		caso 6:menu()
@@ -1384,7 +1489,9 @@ programa
 
 	}
 	funcao carrinho() //painel do carrinho
-		{inteiro i, resp2
+
+			{inteiro i, resp2
+
 			
 			inteiro quant = tp.real_para_inteiro(quantidade[0])
 				faca {
@@ -1411,8 +1518,10 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 55838; 
- * @DOBRAMENTO-CODIGO = [19, 513, 522, 526, 531, 536, 541, 548, 557, 583, 645, 886];
+
+ * @POSICAO-CURSOR = 74211; 
+ * @DOBRAMENTO-CODIGO = [20, 514, 523, 527, 532, 537, 542, 549, 558, 584, 647, 863, 876, 880, 893, 901, 926, 929, 911, 933, 678, 947, 1474];
+
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
