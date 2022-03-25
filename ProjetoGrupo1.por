@@ -12,6 +12,7 @@ programa
 	real iphone13 = 5849.10, iphone13pro =7199.00, iphone13promax = 7899.00, samsungs22 = 5849.17, samsungs22ultra = 8549.17
 	real placamae = 699.00, processador = 1499.00, ssd = 279.00, placadevideo = 2499.00, fonte = 399.00
 
+
 	inteiro estoque[15] = {6, 20, 14, 3, 5, 10, 6, 7, 1, 5, 4, 4, 4, 4, 4}
 	real compras[15] 
 	cadeia produtos[15]
@@ -574,6 +575,7 @@ programa
 	
 
 
+
 			resposta()
 			leia(entrar)
 			logo2()
@@ -664,6 +666,7 @@ programa
 	kaboom()
 	escolha(departamento)
 
+
 	{caso 1: dpconsole()
 	pare
 	
@@ -685,7 +688,8 @@ programa
 }
 	funcao dpconsole() //painel do departamento do console
 	{inteiro console
-	
+
+
 		kaboomvoltar()
 		escreva("\n\t\t\t\t\t\t\t===== CONSOLES =====\n\n")
 
@@ -711,14 +715,17 @@ programa
 				faca{
 					kaboom()
 					equacao = (quan * play5)
+
 					 //Converte do real para inteiro
 					//escreva("\t\t\t\t\t\tTemos ", estoque[0], " Playstation 5 em nosso estoque.\n")
 					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan , " unidades do Playstation 5. No total de R$ ", equacao)
+
 					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
 					resposta()
 					leia(comprar)}
 				enquanto(comprar!=1 e comprar != 2)
 				se(comprar == 1){
+
 					compras[carrin] = equacao 
 					produtos[carrin] = "Playstation 5"
 					quantidade[carrin] = quan
@@ -726,6 +733,7 @@ programa
 					valortotal += equacao
 					carrinho()
 					}
+
 				senao se(comprar == 2){
 					kaboom()
 					menu()
@@ -754,12 +762,14 @@ programa
 					leia(comprar)}
 				enquanto(comprar!=1 e comprar != 2)
 				se(comprar == 1){
+
 					compras[carrin] = equacao 
 					produtos[carrin] = "Playstation 4"
 					quantidade[carrin] = quan
 					carrin += 1
 					valortotal += equacao
 					carrinho()
+
 						}
 				senao se(comprar == 2){
 					kaboom()
@@ -1487,6 +1497,7 @@ programa
 			se(resp1 == 2){
 			kaboom()
 			menu()}
+
 			}
 }
 
@@ -1494,9 +1505,10 @@ programa
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
- * 
+
  * @POSICAO-CURSOR = 83297; 
  * @DOBRAMENTO-CODIGO = [23, 518, 527, 531, 537, 543, 548, 555, 591, 654, 854, 907];
+
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
