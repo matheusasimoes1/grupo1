@@ -12,14 +12,15 @@ programa
 	real iphone13 = 5849.10, iphone13pro =7199.00, iphone13promax = 7899.00, samsungs22 = 5849.17, samsungs22ultra = 8549.17
 	real placamae = 699.00, processador = 1499.00, ssd = 279.00, placadevideo = 2499.00, fonte = 399.00
 
-	inteiro estoque[15] = {6, 20, 14, 3, 5, 10, 6, 7, 1, 5, 4, 4, 4, 4, 4}
-	real compras[] = {0.}
-	cadeia produtos[] = {" "}
-	real quantidade[]={0.}
-	real quan, equacao, arredondado
-	inteiro comprar
 
-	inteiro HAHA = 0
+	inteiro estoque[15] = {6, 20, 14, 3, 5, 10, 6, 7, 1, 5, 4, 4, 4, 4, 4}
+	real compras[15] 
+	cadeia produtos[15]
+	inteiro quantidade[15], quan
+	real  equacao, valortotal=0
+	inteiro comprar,carrin = 0
+	inteiro resp1
+	
 	//funções primarias
 	funcao logo() //logo animada
 	    { 
@@ -574,6 +575,7 @@ programa
 	
 
 
+
 			resposta()
 			leia(entrar)
 			logo2()
@@ -664,6 +666,7 @@ programa
 	kaboom()
 	escolha(departamento)
 
+
 	{caso 1: dpconsole()
 	pare
 	
@@ -685,7 +688,8 @@ programa
 }
 	funcao dpconsole() //painel do departamento do console
 	{inteiro console
-	 inteiro resp1
+
+
 		kaboomvoltar()
 		escreva("\n\t\t\t\t\t\t\t===== CONSOLES =====\n\n")
 
@@ -711,33 +715,25 @@ programa
 				faca{
 					kaboom()
 					equacao = (quan * play5)
-					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
+
+					 //Converte do real para inteiro
 					//escreva("\t\t\t\t\t\tTemos ", estoque[0], " Playstation 5 em nosso estoque.\n")
-					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades do Playstation 5. No total de R$ ", equacao)
+					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quan , " unidades do Playstation 5. No total de R$ ", equacao)
+
 					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
 					resposta()
 					leia(comprar)}
 				enquanto(comprar!=1 e comprar != 2)
 				se(comprar == 1){
-					compras[0] = equacao 
-					produtos[0] = "playstation"
-					quantidade[0] = quan
-				faca{
-					kaboom()
-					inteiro quant = tp.real_para_inteiro(quan)
-					escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
-					escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
-					escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
-					resposta()
-					leia(resp1)}
-					enquanto (resp1 != 1 e resp1 != 2) 
-					se(resp1 == 1){
-					kaboom()
-					carrinho()}
-					se(resp1 == 2){
-					kaboom()
-					menu()}
-						}
+
+					compras[carrin] = equacao 
+					produtos[carrin] = "Playstation 5"
+					quantidade[carrin] = quan
+					carrin += 1
+					valortotal += equacao
+					carrinho()
+					}
+
 				senao se(comprar == 2){
 					kaboom()
 					menu()
@@ -766,26 +762,14 @@ programa
 					leia(comprar)}
 				enquanto(comprar!=1 e comprar != 2)
 				se(comprar == 1){
-					compras[0] = equacao 
-					produtos[0] = "playstation"
-					quantidade[0] = quan
-					
-						faca
-						{
-						kaboom()
-						inteiro quant = tp.real_para_inteiro(quan)
-						escreva("\t\t\t\tVocê escolheu ", quant," unidades de ", produtos[0], " no valor total de R$", compras[0])
-						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
-						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
-						resposta()
-						leia(resp1)}
-						enquanto (resp1 != 1 e resp1 != 2) 
-							se(resp1 == 1){
-								kaboom()
-								carrinho()}
-							se(resp1 == 2){
-								kaboom()
-								menu()}
+
+					compras[carrin] = equacao 
+					produtos[carrin] = "Playstation 4"
+					quantidade[carrin] = quan
+					carrin += 1
+					valortotal += equacao
+					carrinho()
+
 						}
 				senao se(comprar == 2){
 					kaboom()
@@ -1490,26 +1474,30 @@ programa
 	}
 	funcao carrinho() //painel do carrinho
 
-			{inteiro i, resp2
+			{inteiro i=0, resp2, a=0
+		
 
+		
+		para(i;i<carrin;i++){
+			para(a;a<carrin;a++)
+			kaboom()
+			escreva("\t\t\t\tVocê escolheu ", quantidade[i]," unidades de ", produtos[i], " no valor total de R$", compras[i],"\n")
 			
-			inteiro quant = tp.real_para_inteiro(quantidade[0])
-				faca {
-					escreva("\n\t\t\t\t\t\t\t===== CARRINHO =====\n\n")
-					escreva("\n\t\t\t\t\t\t\t", quantidade[0], " ", produtos[0], " = ", compras[0], "\n")
-					escreva("\n\t\t\t\t\t\t\tConfirmar compra?")
-					escreva("\n\t\t\t\t\t\t\t[1] Sim\t\t\t[2] Menu")
-					resposta()
-					leia(resp2)}
-					enquanto(resp2 != 1 e resp2 != 2)
-						se(resp2 == 1){
-						limpa()
-						logo()
-						logo2()
-						escreva("\n\t\t\t\t\t\t\tCompra Finalizada")}
-						se(resp2 == 2)
-						menu()
-						
+		}
+			escreva(valortotal)		
+			escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
+			escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
+			resposta()
+			leia(resp1)
+			se(resp1 == 1){
+			limpa()
+			logo()
+			logo2()
+			escreva("\n\t\t\t\t\t\t\tCompra Finalizada")}
+			se(resp1 == 2){
+			kaboom()
+			menu()}
+
 			}
 }
 
@@ -1517,10 +1505,9 @@ programa
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
- * 
 
- * @POSICAO-CURSOR = 74211; 
- * @DOBRAMENTO-CODIGO = [20, 514, 523, 527, 532, 537, 542, 549, 558, 584, 647, 863, 876, 880, 893, 901, 926, 929, 911, 933, 678, 947, 1474];
+ * @POSICAO-CURSOR = 83297; 
+ * @DOBRAMENTO-CODIGO = [23, 518, 527, 531, 537, 543, 548, 555, 591, 654, 854, 907];
 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
