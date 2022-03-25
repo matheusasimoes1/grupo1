@@ -7,19 +7,23 @@ programa
 	
 	//Variáveis globais
 	cadeia loginglobal = " "
+
 	real play5 = 5598.00, play4 = 2899.00, nintendos = 2354.00, nintendo3ds = 2000.00, xboxs = 2399.00
 	real iphone13 = 5849.10, iphone13pro =7199.00, iphone13promax = 7899.00, samsungs22 = 5849.17, samsungs22ultra = 8549.17
 	real placamae = 699.00, processador = 1499.00, ssd = 279.00, placadevideo = 2499.00, fonte = 399.00
+
 	inteiro estoque[15] = {6, 20, 14, 3, 5, 10, 6, 7, 1, 5, 4, 4, 4, 4, 4}
 	real compras[] = {0.}
 	cadeia produtos[] = {" "}
 	real quantidade[]={0.}
 	real quan, equacao, arredondado
 	inteiro comprar
+
 	inteiro HAHA = 0
 	//funções primarias
 	funcao logo() //logo animada
 	    { 
+
 	    		escreva("\t\t_______________________________________________________________________________________________\n")
 			escreva("\t\t|                                                                                             |\n")
 			escreva("\t\t|                                                                                             |\n")
@@ -530,10 +534,12 @@ programa
 		escreva("\n\n\t\t\t\t-------------------------------------------------------------------------")
 		escreva("\n\n\t\t\t\t\t\t\tDigite uma opção: ")
 	} 
+
 	funcao resposta2() //console de resposta do usuario (quantia)
 	{
 		escreva("\n\n\t\t\t\t-------------------------------------------------------------------------")
 		escreva("\n\n\t\t\t\t\t\t\tDigite a quantidade desejada: ")
+
 	}
 	funcao kaboomsair() //kaboom com opção sair
 	{
@@ -560,6 +566,7 @@ programa
 	{inteiro entrar
 			escreva("\n\t\t\t\t\t\tOlá, viajante! Que bom te ver outra vez!\n")
 			escreva("\n\t\t\t\t\t\tDeseja entrar?\n")
+
 
 			escreva("\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Não")
 
@@ -1221,10 +1228,12 @@ programa
 		"\n\t\t\t\te um aumento notável na duração da bateria. iPhone 13, seu novo superpoder\n\n")
 			faca{
 				escreva("\t\t\t\t\t\t\tTemos ", estoque[10], "  unidades da Iphone 13 em nosso estoque\n\n.", "\n\t\t\t\t\t\t\tPreço unitário da Iphone 13: R$ ", iphone13, ".\n\t\t\t\t\t\t\tQuantas unidades gostaria de comprar? \n\n")
+
 				resposta2()
 				leia(quan)
 				kaboom()	
 				escreva("\n\t\t\t\t\t\t   Não temos essa quantidade disponível")}
+
 			enquanto (quan > estoque[10])
 				
 				faca{
@@ -1232,13 +1241,16 @@ programa
 					equacao = (quan * iphone13)
 					inteiro quant = tp.real_para_inteiro(quan) //Converte do real para inteiro
 					escreva("\n\n\t\t\t\t\t\tVocê escolheu ", quant , " unidades da Iphone 13. No total de R$ ", equacao)
+
 					escreva("\n\n\t\t\t\t\t\tGostaria de por no carrinho?\n\n\t\t\t\t\t\t[1] para Sim\t\t\t[2]Não")
 					resposta()
 					leia(comprar)}
 				enquanto(comprar!=1 e comprar != 2)
 				se(comprar == 1){
 					compras[0] = equacao 
+
 					produtos[0] = "Iphone 13"
+
 					quantidade[0] = quan
 					
 						faca
@@ -1249,12 +1261,14 @@ programa
 						escreva("\n\n\t\t\t\t\t\t\tDeseja finalizar sua compra?")
 						escreva("\n\n\t\t\t\t\t\t[1] Sim\t\t\t\t[2] Continuar comprando")
 						resposta()
+
 						leia(resp3)}
 						enquanto (resp3 != 1 e resp3 != 2) 
 							se(resp3 == 1){
 								kaboom()
 								carrinho()}
 							se(resp3 == 2){
+
 								kaboom()
 								menu()}
 						}
@@ -1262,6 +1276,7 @@ programa
 					kaboom()
 					menu()
 				}
+
 		pare
 		
 		caso 2:escreva("\t\t\t\tÉ todo Pro. Novo sistema de câmera dramaticamente mais poderoso.",
@@ -1462,6 +1477,7 @@ programa
 					kaboom()
 					menu()
 				}
+
 		pare
 
 		caso 6:menu()
@@ -1473,7 +1489,9 @@ programa
 
 	}
 	funcao carrinho() //painel do carrinho
+
 			{inteiro i, resp2
+
 			
 			inteiro quant = tp.real_para_inteiro(quantidade[0])
 				faca {
@@ -1500,8 +1518,10 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+
  * @POSICAO-CURSOR = 74211; 
  * @DOBRAMENTO-CODIGO = [20, 514, 523, 527, 532, 537, 542, 549, 558, 584, 647, 863, 876, 880, 893, 901, 926, 929, 911, 933, 678, 947, 1474];
+
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
